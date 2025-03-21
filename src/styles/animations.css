@@ -39,6 +39,22 @@
   }
 }
 
+@keyframes track-hover {
+  0% {
+    box-shadow: 0 0 0 0 rgba(178, 34, 34, 0);
+  }
+  70% {
+    box-shadow: 0 0 10px 3px rgba(178, 34, 34, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(178, 34, 34, 0);
+  }
+}
+
+.track-card-hover {
+  animation: track-hover 2s infinite;
+}
+
 .hanging-button {
   position: relative;
   display: inline-block;

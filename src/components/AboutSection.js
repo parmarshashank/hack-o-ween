@@ -11,11 +11,11 @@ export default function AboutSection() {
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/parchment-texture.svg')] opacity-5"></div>
           <div className="relative z-10 space-y-6 text-lg">
             <p className="text-gray-300">
-              Welcome to Hack-O-Ween, where coding meets the supernatural! Join us for a 48-hour hackathon that will push your creativity beyond the mortal realm.
+              Welcome to Hack-O-Ween, where coding meets the supernatural! Join us for a 24-hour hackathon that will push your creativity beyond the mortal realm.
             </p>
             <p className="text-gray-300">
-              <span className="text-blood-light">🎃 When:</span> October 30-31, 2025<br />
-              <span className="text-blood-light">👻 Where:</span> Virtual Event<br />
+              <span className="text-blood-light">🎃 When:</span> May 10-11, 2025<br />
+              <span className="text-blood-light">👻 Where:</span> GL Bajaj Institute of Technology and Management<br />
               <span className="text-blood-light">💀 Who:</span> Open to all developers, designers, and creative minds
             </p>
             <p className="text-gray-300">

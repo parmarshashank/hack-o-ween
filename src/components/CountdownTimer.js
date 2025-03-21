@@ -1,31 +1,22 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const calculateTimeLeft = () => {
+  const targetDate = new Date('2025-05-10T00:00:00+05:30');
+  const now = new Date();
+  const difference = targetDate - now;
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / 1000 / 60) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+  };
+};
 
 export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: '--',
-    hours: '--',
-    minutes: '--',
-    seconds: '--'
-  });
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    function calculateTimeLeft() {
-      const targetDate = new Date('2025-05-11T23:59:59');
-      const now = new Date();
-      const difference = targetDate - now;
-
-      return {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
-      };
-    }
-
-    // Initial calculation
-    setTimeLeft(calculateTimeLeft());
-
-    // Update every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -34,23 +25,27 @@ export default function CountdownTimer() {
   }, []);
 
   return (
-    <div className="flex gap-4 justify-center mt-8">
-      <div className="text-center">
-        <span className="text-4xl font-bold text-neon">{timeLeft.days}</span>
-        <span className="block text-sm text-blood">Days</span>
-      </div>
-      <div className="text-center">
-        <span className="text-4xl font-bold text-neon">{timeLeft.hours}</span>
-        <span className="block text-sm text-blood">Hours</span>
-      </div>
-      <div className="text-center">
-        <span className="text-4xl font-bold text-neon">{timeLeft.minutes}</span>
-        <span className="block text-sm text-blood">Minutes</span>
-      </div>
-      <div className="text-center">
-        <span className="text-4xl font-bold text-neon">{timeLeft.seconds}</span>
-        <span className="block text-sm text-blood">Seconds</span>
-      </div>
+    <div className="flex gap-4 md:gap-8 text-center">
+      {Object.entries(timeLeft).map(([unit, value]) => (
+        <div 
+          key={unit}
+          className="group relative w-20 md:w-24 p-3 bg-dark/50 rounded-lg border border-blood/30 
+                     backdrop-blur-sm hover:border-blood transition-all duration-300"
+        >
+          <div className="text-2xl md:text-3xl font-bold text-blood-light group-hover:animate-glitch"
+               data-text={value}>
+            {value}
+          </div>
+          <div className="text-sm text-gray-400 capitalize">
+            {unit}
+          </div>
+          {/* Corner decorations */}
+          <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-blood/0 
+                         group-hover:border-blood/30 transition-all duration-300" />
+          <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-blood/0 
+                         group-hover:border-blood/30 transition-all duration-300" />
+        </div>
+      ))}
     </div>
   );
 }

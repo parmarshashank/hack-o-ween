@@ -5,6 +5,8 @@ import ScheduleSection from '../components/ScheduleSection';
 import PrizesSection from '../components/PrizesSection';
 import FaqSection from '../components/FaqSection';
 import SpookyButton from '../components/SpookyButton';
+import TracksSection from '../components/TracksSection';
+import CollaborateSection from '../components/CollaborateSection';
 
 export default function Home() {
   return (
@@ -60,26 +62,16 @@ export default function Home() {
           <AboutSection />
           <ScheduleSection />
           <PrizesSection />
+          <TracksSection />
+          <CollaborateSection />
           <FaqSection />
         </div>
+
 
         {/* Footer */}
         <footer className="py-8 border-t border-blood/30 bg-dark-red">
           <div className="max-w-6xl mx-auto px-4 text-center">
-            <div className="flex justify-center space-x-6 mb-4">
-              {['Discord', 'Twitter', 'GitHub'].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="text-gray-400 hover:text-blood-light transition-colors duration-300"
-                >
-                  {social}
-                </a>
-              ))}
-            </div>
-            <p className="text-gray-500">
-              2025 Hack-O-Ween. All rights reserved. Enter at your own risk! 
-            </p>
+            <p className="text-gray-400"> 2025 Hack-O-Ween. All rights reserved. Enter at your own risk! </p>
           </div>
         </footer>
       </main>
