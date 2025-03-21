@@ -4,6 +4,7 @@ import AboutSection from '../components/AboutSection';
 import ScheduleSection from '../components/ScheduleSection';
 import PrizesSection from '../components/PrizesSection';
 import FaqSection from '../components/FaqSection';
+import SpookyButton from '../components/SpookyButton';
 
 export default function Home() {
   return (
@@ -24,10 +25,11 @@ export default function Home() {
             <CountdownTimer />
             <a 
               href="https://devfolio.co"
-              className="mt-12 px-8 py-4 bg-blood text-white rounded-lg hover:bg-blood-dark transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
+              className="mt-12"
             >
-              <span className="relative z-10">Register Now</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blood to-blood-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <SpookyButton className="px-8 py-4 transform hover:scale-105">
+                Register Now
+              </SpookyButton>
             </a>
           </div>
         </div>

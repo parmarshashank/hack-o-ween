@@ -10,7 +10,7 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     function calculateTimeLeft() {
-      const targetDate = new Date('2025-10-31T23:59:59');
+      const targetDate = new Date('2025-05-11T23:59:59');
       const now = new Date();
       const difference = targetDate - now;
 

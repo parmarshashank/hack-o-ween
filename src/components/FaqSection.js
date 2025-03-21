@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import SectionTitle from './SectionTitle';
 
 const faqs = [
@@ -30,6 +30,7 @@ const faqs = [
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState(null);
+  const answerRefs = useRef([]);
 
   return (
     <section className="py-20 relative">
@@ -53,11 +54,18 @@ export default function FaqSection() {
                     ▼
                   </span>
                 </div>
-                {openIndex === index && (
-                  <div className="mt-4 text-gray-300 border-t border-blood/20 pt-4 animate-[fadeIn_0.3s_ease-in-out]">
-                    {faq.answer}
-                  </div>
-                )}
+                <div 
+                  ref={el => answerRefs.current[index] = el}
+                  className="overflow-hidden transition-all duration-500 ease-in-out"
+                  style={{
+                    maxHeight: openIndex === index ? answerRefs.current[index]?.scrollHeight + 'px' : '0',
+                    opacity: openIndex === index ? 1 : 0,
+                    transform: `translateY(${openIndex === index ? '0' : '-10px'})`,
+                    marginTop: openIndex === index ? '1rem' : '0'
+                  }}
+                >
+                  <p className="text-gray-300">{faq.answer}</p>
+                </div>
               </button>
             </div>
           ))}
