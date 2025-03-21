@@ -1,0 +1,84 @@
+import CountdownTimer from '../components/CountdownTimer';
+import Layout from '../components/Layout';
+import AboutSection from '../components/AboutSection';
+import ScheduleSection from '../components/ScheduleSection';
+import PrizesSection from '../components/PrizesSection';
+import FaqSection from '../components/FaqSection';
+
+export default function Home() {
+  return (
+    <Layout>
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <div className="relative h-screen overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/haunted-house.svg')] bg-cover bg-center opacity-30">
+            <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-dark"></div>
+          </div>
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center py-10">
+              <span className="animate-glitch inline-block" data-text="Hack-O-Ween">Hack-O-Ween</span>
+              <span className="block text-2xl md:text-3xl lg:text-4xl mt-4 text-blood-light">
+                Code Beyond the Grave
+              </span>
+            </h1>
+            <CountdownTimer />
+            <a 
+              href="https://devfolio.co"
+              className="mt-12 px-8 py-4 bg-blood text-white rounded-lg hover:bg-blood-light transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Register Now</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blood to-blood-light opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+          </div>
+        </div>
+
+        {/* Sponsor Section */}
+        <section className="py-16 relative">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-8 text-blood animate-glitch" data-text="Our Haunted Sponsors">
+              Our Haunted Sponsors
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[1, 2, 3, 4].map((i) => (
+                <div 
+                  key={i}
+                  className="aspect-[3/2] bg-dark/30 rounded-lg border border-blood/20 flex items-center justify-center group hover:border-blood transition-all duration-300"
+                >
+                  <span className="text-2xl text-gray-600 group-hover:text-blood-light transition-colors duration-300">
+                    Sponsor {i}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Main Sections */}
+        <AboutSection />
+        <ScheduleSection />
+        <PrizesSection />
+        <FaqSection />
+
+        {/* Footer */}
+        <footer className="py-8 border-t border-blood/30">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <div className="flex justify-center space-x-6 mb-4">
+              {['Discord', 'Twitter', 'GitHub'].map((social) => (
+                <a
+                  key={social}
+                  href="#"
+                  className="text-gray-400 hover:text-blood-light transition-colors duration-300"
+                >
+                  {social}
+                </a>
+              ))}
+            </div>
+            <p className="text-gray-500">
+              2025 Hack-O-Ween. All rights reserved. Enter at your own risk! 
+            </p>
+          </div>
+        </footer>
+      </main>
+    </Layout>
+  );
+}
