@@ -5,7 +5,7 @@ const prizes = [
     place: "1st Place",
     icon: "🏆",
     prize: "$3,000",
-    color: "from-blood/80 to-blood-light/80",
+    color: "from-blood/80 to-blood-dark/80",
     benefits: [
       "Cash Prize",
       "Premium Developer Licenses",
@@ -17,7 +17,7 @@ const prizes = [
     place: "2nd Place",
     icon: "🥈",
     prize: "$2,000",
-    color: "from-gray-600 to-gray-400",
+    color: "from-dark-red/80 to-dark/80",
     benefits: [
       "Cash Prize",
       "Developer Tools Bundle",
@@ -29,7 +29,7 @@ const prizes = [
     place: "3rd Place",
     icon: "🥉",
     prize: "$1,000",
-    color: "from-blood/40 to-blood/20",
+    color: "from-blood-dark/40 to-dark-red/40",
     benefits: [
       "Cash Prize",
       "Developer Tools Starter Pack",
@@ -63,7 +63,7 @@ export default function PrizesSection() {
               className="relative group perspective-1000"
             >
               <div className="relative transform transition-transform duration-500 group-hover:rotate-y-180">
-                <div className="bg-dark/50 rounded-xl border border-blood/30 p-6 backdrop-blur-sm hover:border-blood transition-all duration-300">
+                <div className="bg-gradient-to-br from-dark-red via-dark to-dark-red rounded-xl border border-blood/30 p-6 backdrop-blur-sm hover:border-blood transition-all duration-300">
                   <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${prize.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   <div className="relative z-10">
                     <div className="text-4xl mb-2">{prize.icon}</div>
@@ -93,7 +93,7 @@ export default function PrizesSection() {
             {categories.map((category, index) => (
               <div 
                 key={index}
-                className="bg-dark/30 border border-blood/20 rounded-lg p-4 text-center hover:border-blood transition-all duration-300 group"
+                className="bg-gradient-to-br from-dark-red via-dark to-dark-red rounded-lg border border-blood/20 p-4 text-center hover:border-blood transition-all duration-300 group backdrop-blur-sm"
               >
                 <span className="text-gray-300 group-hover:text-blood-light transition-colors duration-300">{category}</span>
               </div>
@@ -102,7 +102,7 @@ export default function PrizesSection() {
         </div>
 
         {/* Judging Criteria */}
-        <div className="mt-16 bg-dark/50 rounded-xl border border-blood/30 p-8 backdrop-blur-sm">
+        <div className="mt-16 bg-gradient-to-br from-dark-red via-dark to-dark-red rounded-xl border border-blood/30 p-8 backdrop-blur-sm">
           <h3 className="text-2xl font-bold mb-6 text-center text-blood animate-glitch" data-text="Judging Criteria">
             Judging Criteria
           </h3>

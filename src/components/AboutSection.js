@@ -7,7 +7,7 @@ export default function AboutSection() {
         <h2 className="text-4xl font-bold text-center mb-12 animate-glitch" data-text="About The Haunted Hackathon">
           About The Haunted Hackathon
         </h2>
-        <div className="relative bg-dark/50 p-8 rounded-lg border-2 border-blood shadow-[0_0_15px_rgba(178,34,34,0.3)] backdrop-blur-sm">
+        <div className="relative bg-gradient-to-br from-dark-red via-dark to-dark-red p-8 rounded-lg border-2 border-blood shadow-[0_0_15px_rgba(178,34,34,0.3)] backdrop-blur-sm">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/parchment-texture.svg')] opacity-5"></div>
           <div className="relative z-10 space-y-6 text-lg">
             <p className="text-gray-300">
@@ -21,7 +21,7 @@ export default function AboutSection() {
             <p className="text-gray-300">
               This year's theme: <span className="text-blood-light font-semibold group-hover:animate-glitch" data-text="Digital Nightmares & Tech Terrors">Digital Nightmares & Tech Terrors</span>
             </p>
-            <div className="mt-8 p-4 bg-dark/70 rounded border border-blood/50 group">
+            <div className="mt-8 p-4 bg-gradient-to-br from-dark via-dark-red to-dark rounded border border-blood/50 group">
               <h3 className="text-xl font-bold mb-4 text-blood animate-glitch" data-text="Why Join?">Why Join?</h3>
               <ul className="list-none space-y-2">
                 <li className="flex items-center">

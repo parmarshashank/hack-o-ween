@@ -8,7 +8,9 @@ module.exports = {
     extend: {
       colors: {
         'dark': '#0D0D0D',
+        'dark-red': '#1A0505',
         'blood': '#B22222',
+        'blood-dark': '#800000',
         'blood-light': '#DC3545'
       },
       animation: {

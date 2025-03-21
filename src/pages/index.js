@@ -8,11 +8,11 @@ import FaqSection from '../components/FaqSection';
 export default function Home() {
   return (
     <Layout>
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-gradient-to-b from-dark-red via-dark to-dark-red">
         {/* Hero Section */}
         <div className="relative h-screen overflow-hidden">
           <div className="absolute inset-0 bg-[url('/images/haunted-house.svg')] bg-cover bg-center opacity-30">
-            <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-dark"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-dark-red/50 to-dark/90"></div>
           </div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center py-10">
@@ -24,16 +24,16 @@ export default function Home() {
             <CountdownTimer />
             <a 
               href="https://devfolio.co"
-              className="mt-12 px-8 py-4 bg-blood text-white rounded-lg hover:bg-blood-light transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
+              className="mt-12 px-8 py-4 bg-blood text-white rounded-lg hover:bg-blood-dark transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
             >
               <span className="relative z-10">Register Now</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blood to-blood-light opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blood to-blood-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </div>
         </div>
 
         {/* Sponsor Section */}
-        <section className="py-16 relative">
+        <section className="py-16 relative bg-gradient-to-b from-dark via-dark-red to-dark">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-8 text-blood animate-glitch" data-text="Our Haunted Sponsors">
               Our Haunted Sponsors
@@ -42,7 +42,7 @@ export default function Home() {
               {[1, 2, 3, 4].map((i) => (
                 <div 
                   key={i}
-                  className="aspect-[3/2] bg-dark/30 rounded-lg border border-blood/20 flex items-center justify-center group hover:border-blood transition-all duration-300"
+                  className="aspect-[3/2] bg-dark/30 rounded-lg border border-blood/20 flex items-center justify-center group hover:border-blood transition-all duration-300 backdrop-blur-sm"
                 >
                   <span className="text-2xl text-gray-600 group-hover:text-blood-light transition-colors duration-300">
                     Sponsor {i}
@@ -54,13 +54,15 @@ export default function Home() {
         </section>
 
         {/* Main Sections */}
-        <AboutSection />
-        <ScheduleSection />
-        <PrizesSection />
-        <FaqSection />
+        <div className="bg-gradient-to-b from-dark-red via-dark to-dark-red">
+          <AboutSection />
+          <ScheduleSection />
+          <PrizesSection />
+          <FaqSection />
+        </div>
 
         {/* Footer */}
-        <footer className="py-8 border-t border-blood/30">
+        <footer className="py-8 border-t border-blood/30 bg-dark-red">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <div className="flex justify-center space-x-6 mb-4">
               {['Discord', 'Twitter', 'GitHub'].map((social) => (

@@ -55,7 +55,7 @@ export default function ScheduleSection() {
               <div className="absolute -left-3 top-0 w-6 h-6 bg-blood rounded-full group-hover:animate-pulse">
                 <div className="absolute inset-0 bg-blood rounded-full animate-ping opacity-25"></div>
               </div>
-              <div className="ml-8 p-6 bg-dark/50 rounded-lg border border-blood/30 hover:border-blood transition-all duration-300 backdrop-blur-sm group-hover:translate-x-2">
+              <div className="ml-8 p-6 bg-gradient-to-br from-dark-red via-dark to-dark-red rounded-lg border border-blood/30 hover:border-blood transition-all duration-300 backdrop-blur-sm group-hover:translate-x-2">
                 <div className="flex flex-wrap justify-between items-start mb-2">
                   <h3 className="text-xl font-bold text-blood-light group-hover:animate-glitch" data-text={item.title}>
                     {item.title}
@@ -71,7 +71,7 @@ export default function ScheduleSection() {
               </div>
             </div>
           ))}
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blood via-blood/50 to-transparent"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blood via-blood-dark to-transparent"></div>
         </div>
       </div>
     </section>
